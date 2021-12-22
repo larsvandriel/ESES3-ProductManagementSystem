@@ -4,9 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pms_entities.Models
+namespace ProductManagementSystem.Entities.Models
 {
-    internal class Product
+    public class Product
     {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string EanNumber { get; set; }
+        public Brand Brand { get; set; }
+        public decimal Price { get; set; }
+        public string ImageLocation { get; set; }
+        public DateTime TimeCreated { get; set; }
+        public bool Deleted { get; set; }
+        public DateTime TimeDeleted { get; set; }
     }
 }
