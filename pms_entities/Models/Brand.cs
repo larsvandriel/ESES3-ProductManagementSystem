@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductManagementSystem.Entities.Models
 {
-    public class Brand
+    public class Brand: IEntity
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
