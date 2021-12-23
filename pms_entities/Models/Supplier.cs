@@ -14,6 +14,7 @@ namespace ProductManagementSystem.Entities.Models
         public Address Address { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
+        public List<SupplierOffer> Offers { get; set; }
         public DateTime TimeCreated { get; set; }
         public bool Deleted { get; set; }
         public DateTime TimeDeleted { get; set; }
