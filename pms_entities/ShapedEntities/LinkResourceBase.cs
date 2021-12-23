@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pms_entities.ShapedEntities
+namespace ProductManagementSystem.Entities.ShapedEntities
 {
-    internal class LinkResourceBase
+    public class LinkResourceBase
     {
+        public List<Link> Links { get; set; } = new List<Link>();
+
+        public LinkResourceBase()
+        {
+
+        }
     }
 }

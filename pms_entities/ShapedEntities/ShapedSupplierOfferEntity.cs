@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pms_entities.ShapedEntities
+namespace ProductManagementSystem.Entities.ShapedEntities
 {
-    internal class ShapedSupplierOfferEntity
+    public class ShapedSupplierOfferEntity: ShapedEntity
     {
+        public Guid SupplierId { get; set; }
+        public Guid ProductId { get; set; }
+        public int Amount { get; set; }
     }
 }

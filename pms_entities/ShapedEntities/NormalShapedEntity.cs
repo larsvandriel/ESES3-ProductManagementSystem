@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pms_entities.ShapedEntities
+namespace ProductManagementSystem.Entities.ShapedEntities
 {
-    internal class NormalShapedEntity
+    public class NormalShapedEntity: ShapedEntity
     {
+        public Guid Id { get; set; }
     }
 }

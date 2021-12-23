@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pms_entities.Helpers
+namespace ProductManagementSystem.Entities.ShapedEntities
 {
-    internal class ShapedEntity
+    public abstract class ShapedEntity
     {
+        public Entity Entity { get; set; }
+
+        public ShapedEntity()
+        {
+            Entity = new Entity();
+        }
     }
 }
