@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\LoggingService\LoggingService.csproj" />
+    <ProjectReference Include="..\..\ESES3-LoggingService\LoggingService.csproj" />
     <ProjectReference Include="..\pms_contracts\pms_contracts.csproj" />
     <ProjectReference Include="..\pms_entities\pms_entities.csproj" />
     <ProjectReference Include="..\pms_repository\pms_repository.csproj" />
