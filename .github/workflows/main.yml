@@ -21,7 +21,7 @@ jobs:
     runs-on: windows-2022
     defaults:
       run:
-       working-directory: ..\..
+       working-directory: ..
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -36,7 +36,7 @@ jobs:
           
       - name: run ls
         run: |
-          cd ESES3-ProductManagementSystem
+          mv ESES3-ProductManagementSystem/LoggingService LoggingService
           ls
           cd ESES3-ProductManagementSystem
           ls
