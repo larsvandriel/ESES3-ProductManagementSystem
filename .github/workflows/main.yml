@@ -21,7 +21,7 @@ jobs:
     runs-on: windows-2022
     defaults:
       run:
-       working-directory: ./pms_api
+       working-directory: ..
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -35,9 +35,7 @@ jobs:
           path: ..\ESES3-ProductManagementSystem\LoggingService\
           
       - name: run ls
-        run: |
-          cd ..\..
-          ls
+        run: ls
 
       # Runs a single command using the runners shell
       - name: Setup dotnet
@@ -46,5 +44,7 @@ jobs:
           dotnet-version: '6.0'
       - name: Install dependencies
         run: dotnet restore
+        working-directory: ./pms_api
       - name: Build
         run: dotnet build
+        working-directory: ./pms_api
