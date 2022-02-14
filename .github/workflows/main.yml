@@ -33,6 +33,9 @@ jobs:
         with:
           repository: larsvandriel/ESES3-LoggingService
           path: .\ESES3-ProductManagementSystem\LoggingService\
+          
+      - name: run ls
+        run: ls
 
       # Runs a single command using the runners shell
       - name: Setup dotnet
