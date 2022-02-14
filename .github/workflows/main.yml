@@ -35,7 +35,10 @@ jobs:
           path: LoggingService\
           
       - name: run ls
-        run: ls
+        run: |
+          ls
+          cd ESES3-ProductManagementSystem
+          ls
 
       # Runs a single command using the runners shell
       - name: Setup dotnet
