@@ -20,6 +20,7 @@
     <ProjectReference Include="..\..\LoggingService\LoggingService.csproj" />
     <ProjectReference Include="..\pms_contracts\pms_contracts.csproj" />
     <ProjectReference Include="..\pms_entities\pms_entities.csproj" />
+    <ProjectReference Include="..\pms_kafka_access_layer\pms_kafka_access_layer.csproj" />
     <ProjectReference Include="..\pms_repository\pms_repository.csproj" />
   </ItemGroup>
 

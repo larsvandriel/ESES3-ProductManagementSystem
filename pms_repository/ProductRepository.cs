@@ -28,17 +28,20 @@ namespace ProductManagementSystem.Repository
 
         public void CreateProduct(Product product)
         {
-            List<Category> categories = product.Categories;
-            product.Categories = new List<Category>();
+            //List<Category> categories = product.Categories;
+            //product.Categories = new List<Category>();
 
-            Brand brand = product.Brand;
-            product.Brand = null;
+            //Brand brand = product.Brand;
+            //product.Brand = null;
+
+            RepositoryContext.AttachRange(product.Categories);
+            RepositoryContext.Attach(product.Brand);
 
             product.TimeCreated = DateTime.Now;
             Create(product);
 
-            product.Categories = categories;
-            product.Brand = brand;
+            //product.Categories = categories;
+            //product.Brand = brand;
         }
 
         public void DeleteProduct(Product product)

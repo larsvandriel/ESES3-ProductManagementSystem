@@ -11,6 +11,7 @@ builder.Services.ConfigureIISIntegration();
 builder.Services.ConfigureLoggerService();
 builder.Services.ConfigureMsSqlContext(configuration);
 builder.Services.ConfigureRepositoryWrapper();
+builder.Services.ConfigureKafkaAccessLayer(configuration);
 builder.Services.RegisterFilters();
 
 builder.Services.AddControllers(config =>

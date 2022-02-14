@@ -7,6 +7,7 @@ using ProductManagementSystem.Contracts;
 using ProductManagementSystem.Entities;
 using ProductManagementSystem.Entities.Helpers;
 using ProductManagementSystem.Entities.Models;
+using ProductManagementSystem.KafkaAccessLayer;
 using ProductManagementSystem.Repository;
 
 namespace ProductManagementSystem.API.Extensions
@@ -57,6 +58,12 @@ namespace ProductManagementSystem.API.Extensions
             services.AddScoped<IDataShaper<SupplierOffer>, DataShaper<SupplierOffer>>();
 
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+        }
+
+        public static void ConfigureKafkaAccessLayer(this IServiceCollection services, IConfiguration config)
+        {
+            var bootstrapServers = config["kafka:bootstrapServers"];
+            services.AddScoped<IKafkaContext<Product>>(_ => new KafkaContext<Product>(bootstrapServers));
         }
 
         public static void RegisterFilters(this IServiceCollection services)

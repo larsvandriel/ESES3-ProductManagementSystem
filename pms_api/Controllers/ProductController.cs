@@ -19,12 +19,14 @@ namespace ProductManagementSystem.API.Controllers
         private readonly ILoggerManager _logger;
         private readonly IRepositoryWrapper _repository;
         private readonly LinkGenerator _linkGenerator;
+        private readonly IKafkaContext<Product> _kafkaContext;
 
-        public ProductController(ILoggerManager logger, IRepositoryWrapper repository, LinkGenerator linkGenerator)
+        public ProductController(ILoggerManager logger, IRepositoryWrapper repository, LinkGenerator linkGenerator, IKafkaContext<Product> kafkaContext)
         {
             _logger = logger;
             _repository = repository;
             _linkGenerator = linkGenerator;
+            _kafkaContext = kafkaContext;
         }
 
         [HttpGet]
@@ -128,6 +130,7 @@ namespace ProductManagementSystem.API.Controllers
 
                 _repository.Product.CreateProduct(product);
                 _repository.Save();
+                _kafkaContext.SendProductToKafkaTopic("CreateProduct", product);
 
                 return CreatedAtRoute("ProductById", new { id = product.Id }, product);
             }
@@ -188,6 +191,7 @@ namespace ProductManagementSystem.API.Controllers
 
                 _repository.Product.DeleteProduct(product);
                 _repository.Save();
+                _kafkaContext.SendProductToKafkaTopic("DeleteProduct", product);
 
                 return NoContent();
             }
