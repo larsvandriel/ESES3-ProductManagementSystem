@@ -34,12 +34,8 @@ jobs:
           repository: larsvandriel/ESES3-LoggingService
           path: LoggingService
           
-      - name: run ls
-        run: |
-          mv ESES3-ProductManagementSystem/LoggingService LoggingService
-          ls
-          cd ESES3-ProductManagementSystem
-          ls
+      - name: Move LoggingService To Correct Location
+        run: mv ESES3-ProductManagementSystem/LoggingService LoggingService
 
       # Runs a single command using the runners shell
       - name: Setup dotnet
