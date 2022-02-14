@@ -27,6 +27,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: Checkout LoggingService
+        uses: actions/checkout@v2
+        with:
+          repository: larsvandriel/ESES3-LoggingService
+          path: ProductManagementSystem\LoggingService
 
       # Runs a single command using the runners shell
       - name: Setup dotnet
@@ -35,7 +41,5 @@ jobs:
           dotnet-version: '6.0'
       - name: Install dependencies
         run: dotnet restore
-      - name: Install Paket Dependencies
-        run: paket update
       - name: Build
         run: dotnet build
