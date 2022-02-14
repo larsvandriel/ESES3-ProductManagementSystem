@@ -32,10 +32,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: larsvandriel/ESES3-LoggingService
-          path: LoggingService\
+          path: LoggingService
           
       - name: run ls
         run: |
+          cd ESES3-ProductManagementSystem
           ls
           cd ESES3-ProductManagementSystem
           ls
