@@ -36,7 +36,7 @@ jobs:
           
       - name: run ls
         run: |
-          cd ..
+          cd ..\..
           ls
 
       # Runs a single command using the runners shell
