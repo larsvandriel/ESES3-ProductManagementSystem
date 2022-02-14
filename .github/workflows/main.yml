@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: larsvandriel/ESES3-LoggingService
-          path: ProductManagementSystem\LoggingService
+          path: D:\a\ESES3-ProductManagementSystem\LoggingService\
 
       # Runs a single command using the runners shell
       - name: Setup dotnet
