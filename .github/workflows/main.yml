@@ -33,9 +33,9 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0'
-      - name: Install Paket Dependencies
-        run: paket update
       - name: Install dependencies
         run: dotnet restore
+      - name: Install Paket Dependencies
+        run: paket update
       - name: Build
         run: dotnet build
