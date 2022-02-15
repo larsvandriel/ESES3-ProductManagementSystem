@@ -21,21 +21,30 @@ jobs:
     runs-on: windows-2022
     defaults:
       run:
-       working-directory: ./pms_api
+       working-directory: ..
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: Checkout LoggingService
+        uses: actions/checkout@v2
+        with:
+          repository: larsvandriel/ESES3-LoggingService
+          path: LoggingService
+          
+      - name: Move LoggingService To Correct Location
+        run: mv ESES3-ProductManagementSystem/LoggingService LoggingService
 
       # Runs a single command using the runners shell
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0'
-      - name: Install Paket Dependencies
-        run: paket update
       - name: Install dependencies
         run: dotnet restore
+        working-directory: ./pms_api
       - name: Build
         run: dotnet build
+        working-directory: ./pms_api
